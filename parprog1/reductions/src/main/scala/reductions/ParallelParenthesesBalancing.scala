@@ -65,6 +65,7 @@ object ParallelParenthesesBalancing {
   /** Returns `true` iff the parentheses in the input `chars` are balanced.
    */
   def parBalance(chars: Array[Char], threshold: Int): Boolean = {
+    @tailrec
     def traverse(idx: Int, until: Int, leftCnt: Int, rightCnt: Int): (Int, Int) = {
       if (idx >= until)
         (leftCnt, rightCnt)
